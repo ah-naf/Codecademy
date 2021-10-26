@@ -2,7 +2,13 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const pool = require('./db')
+const path = require('path')
 
+const PORT = process.env.PORT || 5000;
+
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, "Client/build")))
+}
 
 // middleware
 app.use(cors())
@@ -66,4 +72,4 @@ app.delete('/todos/:id', async (req,res) => {
     }
 })
 
-app.listen(5000, () => console.log('Server has started on port 5000'))
+app.listen(PORT, () => console.log('Server has started on port ' + PORT))
