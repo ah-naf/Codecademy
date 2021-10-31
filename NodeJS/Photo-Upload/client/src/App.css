@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.file {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+}
+
+label {
+    margin: auto;
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background: linear-gradient(40deg, #302b2e, #7873f5);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s ease-out;
+}
+
+label:hover {
+    filter: brightness(120%) saturate(80%);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+.container {
+    background-color: white;
+    padding: 3.5rem 3rem;
+    text-align: center;
+    border-radius: .5rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.container p {
+    margin: 1rem 0;
+    opacity: 0.5;
+}
+
+.file-container {
+    border: dashed 2.5px rgb(22, 206, 206);
+    padding: 1.5rem 2rem;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: white;
+    height: 5rem;
+    width: 18rem;
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+}
+
+.loading-container p {
+    margin: 0 auto 0.5rem;
+}
+
+.loading {
+    margin: auto;
+    width: 80%;
+    background-color: wheat;
+    height: 0.35rem;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    position: absolute;
+    content: '';
+    width: 15%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rebeccapurple;
+    animation: animate infinite 1.5s;
+}
+
+.preview-container {
+    max-width: 25rem;
+    background-color: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.75rem;
+}
+
+.link-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link {
+    width: 72%;
+    background-color: rgba(245, 222, 179, 0.75);
+    overflow: hidden;
+    padding: 0.65rem;
+    font-size: 0.8rem;
+    border-radius: 0.35rem;
+}
+
+.link-container button {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    border: none;
+    outline: none;
+    border-radius: 0.3rem;
+    background-color: rgba(138, 43, 226, 0.85);
+    color: white;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.link-container button:hover {
+    background-color: rgba(138, 43, 226, 1);
+}
+
+.check-icon {
+    color: green;
+    font-size: 1.5rem;
+}
+
+.preview-container p {
+    margin: 1rem 0;
+}
+
+.preview-container img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(-2rem);
+    }
+    100% {
+        transform: translateX(14.5rem);
+    }
+}
